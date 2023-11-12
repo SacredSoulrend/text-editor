@@ -66,6 +66,7 @@ https://hidden-peak-17672-a882a2d34b6b.herokuapp.com/
 
 ![Alt text](<assets/pics/IndexedDB stoarage.png>)
 
+
 ## License
 ![License](https://img.shields.io/badge/license-MIT-yellow)
 
