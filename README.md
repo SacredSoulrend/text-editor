@@ -60,7 +60,7 @@ https://hidden-peak-17672-a882a2d34b6b.herokuapp.com/
 
 ![Alt text](assets/pics/install.png)
 
-![Alt text](assets/pics/manifest.png)
+
 
 ![Alt text](<assets/pics/service worker.png>)
 
