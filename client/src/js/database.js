@@ -12,24 +12,36 @@ const initdb = async () =>
     },
   });
 
-// Add logic to a method that accepts some content and adds it to the database
+// TODO: Add logic to a method that accepts some content and adds it to the database
+// Initialize the database
 export const putDb = async (content) => {
-  const db = await initdb();
-  const tx = db.transaction('jate', 'readwrite');
-  const store = tx.objectStore('jate');
-  const id = await store.add({ content }); // Add the content to the database
-  await tx.done;
-  return id; // Return the ID of the added content
+console.log('PUT to the database');
+const jateDb = await openDB('jate', 1);
+const tx = jateDb.transaction('jate', 'readwrite');
+// Access the 'jate' object store
+const store = tx.objectStore('jate');
+// Put the content into the store with ID 1
+const request = store.put({ id: 1, value: content });
+// Wait for the request to complete
+const result = await request;
+console.log('result.value', result);
+return result;
 };
 
-// Add logic for a method that gets all the content from the database
+// TODO: Add logic for a method that gets all the content from the database
+// Retrieve data from the database
 export const getDb = async () => {
-  const db = await initdb();
-  const tx = db.transaction('jate', 'readonly');
-  const store = tx.objectStore('jate');
-  const allContent = await store.getAll(); // Retrieve all content from the database
-  await tx.done;
-  return allContent; // Return an array of all content objects
+console.log('GET from the database');
+const jateDb = await openDB('jate', 1);
+const tx = jateDb.transaction('jate', 'readonly');
+// Access the 'jate' object store
+const store = tx.objectStore('jate');
+// Get the content from the store with ID 1
+const request = store.get(1);
+const result = await request;
+console.log('result.value', result.value);
+return result.value;
 };
 
+// Initialize the database
 initdb();

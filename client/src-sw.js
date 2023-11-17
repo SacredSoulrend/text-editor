@@ -24,15 +24,6 @@ warmStrategyCache({
   strategy: pageCache,
 });
 
-// Use a NetworkFirst strategy for navigation requests (HTML pages)
-registerRoute(({ request }) => request.mode === 'navigate', new NetworkFirst({ cacheName: 'page-cache' }));
-
-// Register the pageCache strategy as the catch handler for navigation requests
-setCatchHandler(({ event }) => {
-  // Handle offline navigation requests using offlineFallback
-  return offlineFallback({ event });
-});
-
 // TODO: Implement asset caching
 registerRoute(
   ({ request }) => ['style', 'script', 'worker'].includes(request.destination),
