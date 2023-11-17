@@ -27,29 +27,32 @@ Follow these steps for usage:
 Development Mode:
 To run the app in development mode, you can use the following command:
 
-bash: npm run start:dev
+bash: npm run start:dev<br>
+
 This command uses concurrently to run the server and client concurrently in development mode.
 
 Production Build:
 If you want to build the production version of the client and start the server, you can use:
 
-bash: npm start
+bash: npm start<br>
+
 This command runs the npm run build script for the client to create a production build, and then it starts the server using node server.js.
 
 Server Only (Development):
 If you want to run only the server in development mode (with nodemon for automatic server restarts), you can use:
 
-bash: npm run server
+bash: npm run server<br>
 
 Client Only (Development):
 If you want to run only the client in development mode, you can use:
 
-bash: npm run client
+bash: npm run client<br>
 
 Build Client Only (Production):
 If you want to build only the client for production, you can use:
 
-bash: npm run build
+bash: npm run build<br>
+
 This will create a production-ready build of your client application.
 
 2. Visit http://localhost:3000 in your browser to use the text editor or visit the Heroku link<br>
